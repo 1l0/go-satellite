@@ -1,7 +1,7 @@
 package satellite
 
 import (
-	"log"
+	//"log"
 	"math"
 	"strconv"
 	"strings"
@@ -94,7 +94,8 @@ func TLEToSat(line1, line2 string, gravconst string) Satellite {
 func parseFloat(strIn string) (ret float64) {
 	ret, err := strconv.ParseFloat(strIn, 64)
 	if err != nil {
-		log.Fatal(err)
+		//log.Fatal(err)
+		ret = 0.0
 	}
 	return ret
 }
@@ -103,7 +104,8 @@ func parseFloat(strIn string) (ret float64) {
 func parseInt(strIn string) (ret int64) {
 	ret, err := strconv.ParseInt(strIn, 10, 0)
 	if err != nil {
-		log.Fatal(err)
+		//log.Fatal(err)
+		ret = 0
 	}
 	return ret
 }

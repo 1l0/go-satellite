@@ -1,7 +1,7 @@
 package satellite
 
 import (
-	"log"
+	//"log"
 	"math"
 )
 
@@ -31,7 +31,7 @@ func getGravConst(name string) (grav GravConst) {
 		grav.j3 = -0.00000253881
 		grav.j4 = -0.00000165597
 		grav.j3oj2 = grav.j3 / grav.j2
-	case "wgs84":
+	default:
 		grav.mu = 398600.5
 		grav.radiusearthkm = 6378.137
 		grav.xke = 60.0 / math.Sqrt(grav.radiusearthkm*grav.radiusearthkm*grav.radiusearthkm/grav.mu)
@@ -40,8 +40,8 @@ func getGravConst(name string) (grav GravConst) {
 		grav.j3 = -0.00000253215306
 		grav.j4 = -0.00000161098761
 		grav.j3oj2 = grav.j3 / grav.j2
-	default:
-		log.Fatal(name, "is not a valid gravity model")
+		//default:
+		//log.Fatal(name, "is not a valid gravity model")
 	}
 
 	return
